@@ -22,7 +22,7 @@ function button(coinName, price) {
     if (!fs.existsSync(iconPath)) {
         iconPath = path.join(__dirname, '/img/notfound.png');
     }
-    price = price.toFixed(2); 
+    price = parseFloat(price).toFixed(2); 
     return new TouchBarButton({
         label: coinName + ' €' + price,
         // label: '€' + price,
