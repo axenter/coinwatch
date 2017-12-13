@@ -12,8 +12,7 @@ const defaultConfig = {
     refresh: 150000, // 2.5 minutes
     coins: [
         "bitcoin",
-        "ethereum",
-        "ripple"
+        "ark"
     ]
 };
 
@@ -24,8 +23,8 @@ function button(coinName, price) {
     }
 
     return new TouchBarButton({
-        // label: coinName + ' $' + price,
-        label: '$' + price,
+        label: coinName + ' $' + price,
+        // label: '$' + price,
         textColor: '#ABCDEF',
         icon: iconPath,
         iconPosition: 'left',
@@ -75,7 +74,7 @@ function createWindow(config) {
     });
 
     var refresh = () => {
-        fetch('https://api.coinmarketcap.com/v1/ticker/?limit=20')
+        fetch('https://api.coinmarketcap.com/v1/ticker/?limit=50')
         .then((res) => { return res.json(); }
         ).then((json) => { win.setTouchBar(touchBar(json, config.coins)); })
     };
