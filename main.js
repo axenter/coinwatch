@@ -12,7 +12,8 @@ const defaultConfig = {
     refresh: 150000, // 2.5 minutes
     coins: [
         "bitcoin",
-        "ark"
+        "ark",
+        "salt"
     ]
 };
 
