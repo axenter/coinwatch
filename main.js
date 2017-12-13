@@ -45,7 +45,7 @@ function touchBar(response, ids) {
         response.filter(
             (coin) => ids.includes(coin.id)
         ).map(
-            (coin) => button(coin.id, coin.price_euro));
+            (coin) => button(coin.id, coin.price_eur));
 
     return new TouchBar(
         buttons.filter((b) => b !== null));
@@ -74,7 +74,7 @@ function createWindow(config) {
     });
 
     var refresh = () => {
-        fetch('https://api.coinmarketcap.com/v1/ticker/?limit=50')
+        fetch('https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=50')
         .then((res) => { return res.json(); }
         ).then((json) => { win.setTouchBar(touchBar(json, config.coins)); })
     };
