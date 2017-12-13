@@ -45,7 +45,7 @@ function touchBar(response, ids) {
         response.filter(
             (coin) => ids.includes(coin.id)
         ).map(
-            (coin) => button(coin.id, coin.price_eur));
+            (coin) => button(coin.id, coin.price_euro));
 
     return new TouchBar(
         buttons.filter((b) => b !== null));
